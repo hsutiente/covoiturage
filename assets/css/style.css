@@ -1,0 +1,117 @@
+* {
+padding:0;
+margin:0;
+border:0;
+}
+
+html{
+    background: #f5f5dc;
+}
+
+body{
+    padding: 0;   
+    margin: 10px 5%;
+    box-shadow: 1px 1px 12px #555;
+    color: #483d37;
+    background: #d9e021;
+   
+}
+.top{
+    height: 100px;
+    background: #483d37;
+    color: white;
+}
+#logo{
+    margin-top: 10px;
+    margin-right: -45px;
+}
+#lens{
+
+    margin-right: 5%;
+}
+.header{
+    margin: 0;
+    padding: 30px;
+    height: 110px;
+    border-bottom-right-radius: 80%;
+    background: #483d37;
+    color: white;
+}
+
+
+
+.login{
+    position: absolute;
+    top: 1em;
+    margin-left: 60%;
+}
+.logo{float: left; width: 70%;}
+.logo img{
+    height: 90px;
+}
+#rechercher{
+    height: 150px;
+    background: #d9e021;
+    padding: 10px;
+}
+#rechercher a {color: #ffffff;}
+
+#title{
+    position: absolute;
+    top: 1em;
+    left: 3em;
+}
+.titre a{
+    color: #ffffff;
+}
+
+.publier{float: right;width:20%;margin:auto;}
+.trouver{float: left;}
+
+.annonce{float: left;width: 70%; }
+.autre{float: right; width: 30%; }
+
+.container_trajet{
+    color: #483d37;
+    padding: 10px;
+    background: white;
+    box-shadow: 1px 1px 12px #555;
+}
+
+/*INSCRIPTION */
+
+.add{
+    background: white;
+    padding: 10px;
+    box-shadow: 1px 1px 12px #555;
+}
+#add{float: left; border: solid 1px #483d37; width: 65%;padding: 20px;margin-left: 1%;box-shadow: 1px 1px 12px #555;
+}
+.info{float: right; border: solid 1px #483d37; width: 30%;padding: 20px;margin-right:3%;box-shadow: 1px 1px 12px #555;
+}
+
+
+
+/*FOOTER*/
+
+footer{
+
+
+    height: 140px;
+    background: #483d37;
+    color: #ffffff;
+    font-size: 85%;
+    padding-top : 2%;
+}
+
+.footer{
+    margin-left : 5%;
+}
+
+.footer a{
+    color:#ffffff;
+}
+
+
+
+
