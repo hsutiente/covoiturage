@@ -1,3 +1,10 @@
+<?php
+$verifSession = $this->session->userdata('pseudoConnecte');
+?>
+    <?php
+    if(!$verifSession){
+    ?>
+
     <div id="rechercher">
         <div class="container">
             <div class="publier">
@@ -73,14 +80,17 @@
             </div>
         </div>
     </div>
+<?php
+    }
+?>
 
-    <div class="container_trajet">
+    <div class="container_page">
         <div class="container">
-            <div class="annonce">
+            <div class="corps">
                 <h3>Les 10 derniers annonces publiées </h3>
                 <a href=""> Afficher tous les trajets</a>
             </div>
-            <div class="autre">
+            <div class="info">
                 <h3>Suivez-nous sur FB</h3>
             </div>
         </div>

@@ -16,17 +16,11 @@
 
                 <h3>NOUVELLE INSCRIPTION <br />
 
-                    <?php
-                    $verifSession = $this->session->userdata('pseudoConnecte');
-                    echo $verifSession;
-                    if (isset($verifSession)){
-                        echo "<br />".$this->session->userdata('pseudoConnecte');
-                    }
-                    ?>
                 </h3>
                 <hr>
                 <form id = "formInscription" action="<?php echo site_url('inscription');?>" method="post">
                     <table cellspacing="10" width="500">
+
                         <tr>
                             <td colspan='4' height="50"><label for='login'>Login</label></td>
                             <td colspan='2'> <input class="form-control" type='text' id='login' name='login'> </td>

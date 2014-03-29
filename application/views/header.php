@@ -10,6 +10,8 @@
         <script type="text/javascript" src="<?php echo js_url($test='script');?>"></script>
         <link rel="stylesheet" type="text/css" href="<?php echo css_url($test='bootstrap');?>">
         <link rel="stylesheet" type="text/css" href="<?php echo css_url($test='style');?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo css_url($test='apiUtils.css');?>">
+
         <script type="text/javascript">
 
             function afficherCriteres(){
@@ -63,3 +65,49 @@
         <img id="lens" align="right" src="<?php echo img_url('lens.png');?>">
     </div>
 </div>
+
+<?php
+if($verifSession){
+?>
+<div class="notif">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Acceuil</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li ><a href="<?php echo site_url('trouver');?>">Trouver un trajet</a></li>
+                    <li ><a href="<?php echo site_url('publier');?>">Publier un trajet</a></li>
+                </ul>
+                <ul  class="nav navbar-nav navbar-right">
+                    <li><a href="#" data-notification="5" class="notifications"><img src="<?php echo img_url('inbox.png');?>"></a></li>
+                    <ul class="nav navbar-nav navbar-left">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo img_url('avatar.png');?>"> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Mon profil</a></li>
+                                <li><a href="#">Mes trajets</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">&Eacutedit√© mon profil</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<?php
+}
+?>
