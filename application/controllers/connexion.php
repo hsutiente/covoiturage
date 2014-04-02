@@ -25,14 +25,13 @@ class Connexion extends CI_Controller {
                 if(sha1($this->input->post('pass')) == $ligne->password){
                     $this->session->set_userdata('pseudoConnecte',$this->input->post('login'));
                     $view_data['pseudoConnecte'] = $this->session->userdata('pseudoConnecte');
-                        if(!isset($rememberme) OR strlen($rememberme)==0) {
+                    if(!isset($rememberme) OR strlen($rememberme)==0) {
                         $this->session->set_userdata('test','test');
-                        $this->session->sess_expiration = 15;
                         $this->session->sess_expire_on_close = TRUE;
                         $this->session->sess_time_to_update = 15;
                         $this->session->sess_update();
                     }
-                    $this->load_view('index',$view_data);
+                    redirect('index', 'refresh');
                 }
             }
             $this->load_view('connexion',$view_data);

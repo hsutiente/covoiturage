@@ -1,6 +1,6 @@
-<div class="add">
+<div class="container_page">
     <div class="container">
-        <div id="add">
+        <div class="corps">
             <p style='float:right'>Déjà inscrit ? <br> <a href="">Connectez-vous</a></p>
 
             <h3>INSCRIPTION VALIDEE</h3>

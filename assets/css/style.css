@@ -1,7 +1,7 @@
 * {
-padding:0;
-margin:0;
-border:0;
+    padding:0;
+    margin:0;
+    border:0;
 }
 
 html{
@@ -14,8 +14,13 @@ body{
     box-shadow: 1px 1px 12px #555;
     color: #483d37;
     background: #d9e021;
-   
+
 }
+#lens{
+
+    margin-right: 5%;
+}
+
 .top{
     height: 100px;
     background: #483d37;
@@ -25,10 +30,7 @@ body{
     margin-top: 10px;
     margin-right: -45px;
 }
-#lens{
 
-    margin-right: 5%;
-}
 .header{
     margin: 0;
     padding: 30px;
@@ -40,15 +42,18 @@ body{
 
 
 
+
+
+
 .login{
     position: absolute;
     top: 1em;
     margin-left: 60%;
+
 }
-.logo{float: left; width: 70%;}
-.logo img{
-    height: 90px;
-}
+
+.logo{float: left;}
+.logo img{margin-top: 5%;}
 #rechercher{
     height: 150px;
     background: #d9e021;
@@ -61,36 +66,49 @@ body{
     top: 1em;
     left: 3em;
 }
-.titre a{
-    color: #ffffff;
-}
 
-.publier{float: right;width:20%;margin:auto;}
+.publier{float: right;margin-right: 5%;}
 .trouver{float: left;}
 
-.annonce{float: left;width: 70%; }
-.autre{float: right; width: 30%; }
 
-.container_trajet{
+
+.container_page{
     color: #483d37;
-    padding: 10px;
+    padding: 20px;
+    margin-top: 15px;
     background: white;
     box-shadow: 1px 1px 12px #555;
 }
 
 /*INSCRIPTION */
 
-.add{
-    background: white;
-    padding: 10px;
-    box-shadow: 1px 1px 12px #555;
-}
-#add{float: left; border: solid 1px #483d37; width: 65%;padding: 20px;margin-left: 1%;box-shadow: 1px 1px 12px #555;
-}
-.info{float: right; border: solid 1px #483d37; width: 30%;padding: 20px;margin-right:3%;box-shadow: 1px 1px 12px #555;
+
+.corps{float: left; border: solid 1px #483d37; width: 65%;padding: 15px;box-shadow: 1px 1px 12px #555;}
+.info{float: right; border: solid 1px #483d37; width: 30%;padding: 20px;box-shadow: 1px 1px 12px #555;margin-right: 3%;}
+
+
+
+
+
+/*PROFIL*/
+.notif{
+    height: 50px;
+    box-shadow-bottom: 1px 1px 12px #555;
 }
 
 
+.navbar{background: #d9e021; border: none;}
+.navbar-default .navbar-nav > .open > a:focus{color: #d9e021; background-color: #d9e021;}
+
+.badge{
+
+
+}
+span.badge{
+    margin-left: -10px;
+    background-color: red;
+    border: 1px solid;
+}
 
 /*FOOTER*/
 
@@ -112,6 +130,63 @@ footer{
     color:#ffffff;
 }
 
+/*FORMULAIRE AJOUT TRAJET*/
+
+.form_ajoutTrajet{
+
+}
+
+.form_ajoutTrajet input, textarea, select {
+   padding:3px;
+   border:1px solid #483d37;
+   border-radius:5px; 
+   line-height:150%;
+}
+
+.form_ajoutTrajet input[type=checkbox] {
+   background-color:transparent;
+   border:none;
+   width:10px;
+}
+.form_ajoutTrajet label{
+    display:block;
+    width:200px;
+    float:left;
+}
+
+.form_ajoutTrajet fieldset {
+   padding:0 20px 20px 20px;
+   margin-bottom:10px;
+}
+
+
+/* Tooltip */
+
+
+#tooltip {
+    position:absolute;
+    z-index:9999;
+    color:#fff;
+    font-size:10px;
+    width:180px;
+    
+}
+
+#tooltip .tipHeader {
+    height:8px;
+    background:url(img/tipHeader.gif) no-repeat;
+}
+
+
+#tooltip .tipBody {
+    background-color:#000;
+    padding:5px 5px 5px 15px;
+}
+
+#tooltip .tipFooter {
+    height:8px;
+    background:url(img/tipFooter.gif) no-repeat;
+}
 
 
 

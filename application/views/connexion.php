@@ -1,6 +1,6 @@
-    <div class="add">
+    <div class="container_page">
         <div class="container">
-            <div id="add">
+            <div class="corps">
                 <p style='float:right'>Toujours pas inscrit ? <br> <a href="<?php echo site_url('inscription');?>">Inscrivez-vous maintenant !</a></p>
 
                 <h3>CONNEXION</h3>
@@ -18,7 +18,7 @@
                         </tr>
                         <tr>
                             <td colspan='0' height="0"><label for='rememberme'>Se souvenir de moi</label></td>
-                            <td colspan='4'> <input class="form-control" type='checkbox' id='rememberme' name='rememberme'> </td>
+                            <td colspan='4'> <input  type='checkbox' id='rememberme' name='rememberme'> </td>
                         </tr>
 
                         <tr>
@@ -31,14 +31,14 @@
 
                 </form>
 
-
-
-            </div> 
-
-            <div class="info">
-                
-
             </div>
-
+            <div class="info">
+                <h4>Connectez vous !</h4>
+                <hr
+                <p Style='text-align:justify;'>
+                    Notre site met en relation conducteurs et passagers. Que vous soyez conducteur à la recherche de passagers, ou passager à la recherche d'une place libre, consultez les profils et évaluations de vos covoitureurs et voyagez en toute confiance !
+                </p>
+            </div>
         </div>
+
     </div>

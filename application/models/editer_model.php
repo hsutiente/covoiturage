@@ -13,6 +13,28 @@ class Editer_model extends CI_Model{
         return $query;
     }
 
+    public function getId($pseudo){
+        $query = $this->db->select('id')
+            ->from('utilisateur')
+            ->get()
+            ->resultat();
+    }
+
+    public function changerPass($pass,$login){
+        $data = array(
+            'password' => sha1($pass)
+        );
+        $this->db->where('login', $login);
+        $this->db->update('utilisateur', $data);
+    }
+
+    public function changerMail($mail,$login){
+        $data = array(
+            'email' => $mail
+        );
+        $this->db->where('login', $login);
+        $this->db->update('utilisateur', $data);
+    }
 }
 
 

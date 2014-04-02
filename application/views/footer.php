@@ -1,7 +1,7 @@
 
 </body>
 <footer>
-    <div>
+    <div class="container">
         <ul class = "footer"> <b>A propos</b>
             <li><a href="<?php echo site_url('index');?>">Accueil</a></li>
             <li><a href="<?php echo site_url('contacter');?>">Nous contacter</a></li>
