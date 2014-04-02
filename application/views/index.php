@@ -8,7 +8,7 @@ $verifSession = $this->session->userdata('pseudoConnecte');
     <div id="rechercher">
         <div class="container">
             <div class="publier">
-                <a href="<?php echo site_url('publier');?>" id='button'>Publier un trajet</a>
+                <a href="<?php echo site_url('publier');?>" class="btn btn-success">Publier un trajet</a>
             </div>
             <div class="trouver" >
                 <h3>Trouver votre covoiturage</h3>
@@ -16,13 +16,19 @@ $verifSession = $this->session->userdata('pseudoConnecte');
                     <table >
                         <tr>
                             <td colspan="3"> <label for='villeDepart'>Ville de départ</label> </td>
-                            <td width='240'><input class="form-control" id='villeDepart' type="text" name="depart"> </td>
+                            <td ><input search="ville" class="ui-autocomplete-input" autocomplete="off" id='villeDepart' type="text" name="depart"> </td>
                             <td width='10'></td>
                             
-                            <td colspan="3"><label for='dateDepart'>Date de départ</label></td>
-                            <td width='240'><input class="form-control" id='dateDepart' type="date" name="dateDepart"></td>
+                            <td colspan="3"><label for='dateDepart'>Date de départ</label></td> 
+
+                            <td width='240'><input class="form-control" id='dateDepart' type='text' name="dateDepart" onclick="ds_sh(this);"></td>
                             
                             <td><input type="submit" class="btn btn-default" value="Rechercher"></td>
+                            <table class="ds_box" cellpadding="0" cellspacing="0" id="ds_conclass" style="display: none;">
+                                <tr>
+                                    <td id="ds_calclass"></td>
+                                </tr>
+                            </table>
                         </tr>
                         <tr>
                             <td><a href="#" id="criteres" onClick="afficherCriteres();return false;">Plus de critères</a></td>
@@ -83,15 +89,22 @@ $verifSession = $this->session->userdata('pseudoConnecte');
 <?php
     }
 ?>
-
     <div class="container_page">
         <div class="container">
             <div class="corps">
                 <h3>Les 10 derniers annonces publiées </h3>
+                <hr>
+                <?php
+                echo "- Au départ de ".$trajetunville." le ".$trajetundate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajetunid.'/');?>">ici </a>
+                </br>
+                </br>
                 <a href=""> Afficher tous les trajets</a>
+
             </div>
             <div class="info">
                 <h3>Suivez-nous sur FB</h3>
+                <hr>
             </div>
         </div>
     </div>

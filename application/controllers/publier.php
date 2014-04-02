@@ -16,22 +16,23 @@ class Publier extends CI_Controller {
 
     public function publier(){
         $view_data = array();
-        $this->load_view('publier',$view_data);
         $this->load->library('form_validation');
-
         $this->form_validation->set_rules('villeDepart', '"Ville de départ"', 'trim|required|encode_php_tags|xss_clean');
-        $this->form_validation->set_rules('codePostal', '"codePostal"', 'required');
+        $this->form_validation->set_rules('date', 'date', 'required');
 
 
         if($this->form_validation->run()){
             $villeDepart = $this->input->post('villeDepart');
-            $codePostal = $this->input->post('codePostal');
-            $this->publierManager->ajouterVille(
-                $villeDepart,
-                $codePostal);
+            $date_us = $this->input->post('date');
+            $date_fr = explode('/',$date_us);
+            $date = $date_fr[0]."-".$date_fr[1]."-".$date_fr[2];
+            $this->publierManager->ajouterVille($villeDepart);
+            $this->publierManager->ajouterTrajet($villeDepart,$date);
+            $this->load_view('ajouter',$view_data);
+
         }
         else{
-            $this->load_view('publier',$view_data);
+            $this->load_view('ajouter',$view_data);
         }
     }
 }

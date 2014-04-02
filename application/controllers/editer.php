@@ -21,6 +21,25 @@ class Editer extends CI_Controller {
                 $view_data['email'] = $ligne->email;
             }
         }
-        $this->load_view('editerProfil',$view_data);
+        $pass1 = $this->input->post('pass1');
+        $pass2 = $this->input->post('pass2');
+        $mail = $this->input->post('email');
+
+
+        if((isset($pass1)) AND (isset($pass2)) AND ($pass1!=$pass2)){
+            $this->load_view('editerProfilPassErrone',$view_data);
+        }
+
+       else if((strlen($pass1)>0 AND strlen($pass2)>0) AND (isset($pass1)) AND (isset($pass2)) AND ($pass1==$pass2)){
+           $this->editerManager->changerPass($pass1,$pseudo);
+           $this->editerManager->changerMail($mail,$pseudo);
+           $mail = "";
+           $pass1 = "";
+           $pass2 = "";
+           $this->load_view('editerProfilPassChange',$view_data);
+        }
+        else{
+            $this->load_view('editerProfil',$view_data);
+        }
     }
 }

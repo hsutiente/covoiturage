@@ -1,7 +1,7 @@
 * {
-padding:0;
-margin:0;
-border;
+    padding:0;
+    margin:0;
+    border:0;
 }
 
 html{
@@ -14,7 +14,13 @@ body{
     box-shadow: 1px 1px 12px #555;
     color: #483d37;
     background: #d9e021;
+
 }
+#lens{
+
+    margin-right: 5%;
+}
+
 .top{
     height: 100px;
     background: #483d37;
@@ -24,9 +30,7 @@ body{
     margin-top: 10px;
     margin-right: -45px;
 }
-#lens{
-    margin-right: 3%;
-}
+
 .header{
     margin: 0;
     padding: 30px;
@@ -38,10 +42,14 @@ body{
 
 
 
+
+
+
 .login{
     position: absolute;
     top: 1em;
     margin-left: 60%;
+
 }
 
 .logo{float: left;}
@@ -75,13 +83,11 @@ body{
 /*INSCRIPTION */
 
 
-.corps{float: left; border: solid 1px #483d37; width: 60%;padding: 10px;}
-.info{float: right; border: solid 1px #483d37; width: 30%;padding: 10px;margin-right: 5%;}
+.corps{float: left; border: solid 1px #483d37; width: 65%;padding: 15px;box-shadow: 1px 1px 12px #555;}
+.info{float: right; border: solid 1px #483d37; width: 30%;padding: 20px;box-shadow: 1px 1px 12px #555;margin-right: 3%;}
 
 
-/*FOOTER*/
-footer{height: 100px; background: #483d37;
-}
+
 
 
 /*PROFIL*/
@@ -95,11 +101,92 @@ footer{height: 100px; background: #483d37;
 .navbar-default .navbar-nav > .open > a:focus{color: #d9e021; background-color: #d9e021;}
 
 .badge{
-    
-    
+
+
 }
 span.badge{
     margin-left: -10px;
     background-color: red;
     border: 1px solid;
 }
+
+/*FOOTER*/
+
+footer{
+
+
+    height: 140px;
+    background: #483d37;
+    color: #ffffff;
+    font-size: 85%;
+    padding-top : 2%;
+}
+
+.footer{
+    margin-left : 5%;
+}
+
+.footer a{
+    color:#ffffff;
+}
+
+/*FORMULAIRE AJOUT TRAJET*/
+
+.form_ajoutTrajet{
+
+}
+
+.form_ajoutTrajet input, textarea, select {
+   padding:3px;
+   border:1px solid #483d37;
+   border-radius:5px; 
+   line-height:150%;
+}
+
+.form_ajoutTrajet input[type=checkbox] {
+   background-color:transparent;
+   border:none;
+   width:10px;
+}
+.form_ajoutTrajet label{
+    display:block;
+    width:200px;
+    float:left;
+}
+
+.form_ajoutTrajet fieldset {
+   padding:0 20px 20px 20px;
+   margin-bottom:10px;
+}
+
+
+/* Tooltip */
+
+
+#tooltip {
+    position:absolute;
+    z-index:9999;
+    color:#fff;
+    font-size:10px;
+    width:180px;
+    
+}
+
+#tooltip .tipHeader {
+    height:8px;
+    background:url(img/tipHeader.gif) no-repeat;
+}
+
+
+#tooltip .tipBody {
+    background-color:#000;
+    padding:5px 5px 5px 15px;
+}
+
+#tooltip .tipFooter {
+    height:8px;
+    background:url(img/tipFooter.gif) no-repeat;
+}
+
+
+

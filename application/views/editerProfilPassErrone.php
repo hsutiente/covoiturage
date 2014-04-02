@@ -11,6 +11,7 @@
                         <td colspan='2'> <input class="form-control" value = "<?php echo $email; ?>"type='text' id='email' name='email'> </td>
                     </tr>
                     <tr>
+                        <font color="red">Les deux mots de passe ne correspondent pas</font>
                         <td colspan='4' height="50"><label for='pass'>Mot de passe</label></td>
                         <td colspan='2'> <input class="form-control" type='password' id='pass1' name='pass1'> </td>
                     </tr>

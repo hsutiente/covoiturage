@@ -9,9 +9,9 @@
             });
     });
 </script>
-    <div class="add">
+    <div class="container_page">
         <div class="container">
-            <div id="add">
+            <div class="corps">
                 <p style='float:right'>Déjà inscrit ? <br> <a href="<?php echo site_url('connexion');?>">Connectez-vous</a></p>
 
                 <h3>NOUVELLE INSCRIPTION <br />
