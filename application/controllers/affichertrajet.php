@@ -20,10 +20,17 @@ class Affichertrajet extends CI_Controller {
 
         }
         else
-        {
-            $view_data2 = array();
-            $view_data2['idTrajet'] = $this->uri->segment(3);
-            print_r($view_data2['idTrajet']);
+        {   $view_data2 = array();
+            $query = $this->db->query("select * from trajet where id =".$this->uri->segment(3));
+            if ($query->num_rows() > 0)
+            {
+                $row = $query->row();
+                $view_data2['id'] = $row->id;
+                $view_data2['dateDepart'] = $row->id;
+                $view_data2['nbPlace'] = $row->id;
+                $view_data2['nbKilometres'] = $row->id;
+                $view_data2['villeDepart'] = $row->id;
+            }
             $this->load_view('afficher',$view_data2);
         }
     }

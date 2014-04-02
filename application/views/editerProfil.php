@@ -18,17 +18,17 @@
                         <td colspan='4' height="50"><label for='pass'>Confirmation mot de passe</label></td>
                         <td colspan='2'> <input class="form-control" type='password' id='pass2' name='pass2'> </td>
                     </tr>
-                    <tr>
-                        <td colspan='4' height="50"><label for='fonction'>Fonction</label></td>
-                        <td colspan='2'>
-                            <select class="form-control" type='text' id='fonction' name='fonction'>
-                                <option>Etudiant</option>
-                                <option>Enseignant</option>
-                                <option>Personnel</option>
-                                <option>Autre ...</option>
-                            </select>
-                        </td>
-                    </tr>
+<!--                    <tr>-->
+<!--                        <td colspan='4' height="50"><label for='fonction'>Fonction</label></td>-->
+<!--                        <td colspan='2'>-->
+<!--                            <select class="form-control" type='text' id='fonction' name='fonction'>-->
+<!--                                <option>Etudiant</option>-->
+<!--                                <option>Enseignant</option>-->
+<!--                                <option>Personnel</option>-->
+<!--                                <option>Autre ...</option>-->
+<!--                            </select>-->
+<!--                        </td>-->
+<!--                    </tr>-->
                     <tr>
                         <td colspan='4' height="50"></td>
                         <td align='centre'><input Style='background:#d9e021 ' type="submit" class="btn btn-default" value="Mettre a jour mes informations"></td>
