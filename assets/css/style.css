@@ -16,9 +16,13 @@ body{
     background: #d9e021;
 
 }
-.map{
-    height: 10%;
+.adp-text{
+    width: 96%;
 }
+
+#map_canvas{
+    width: 600px;
+    height: 500px;}
 #lens{
 
     margin-right: 5%;
