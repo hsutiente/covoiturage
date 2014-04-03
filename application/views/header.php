@@ -141,7 +141,7 @@ function create_champ(i) {
                             <li ><a href="<?php echo site_url('publier');?>">Publier un trajet</a></li>
                         </ul>
                         <ul  class="nav navbar-nav navbar-right">
-                            <li><a href="#" data-notification="5" class="notifications"><img src="<?php echo img_url('inbox.png');?>"></a></li>
+                            <li><a href="<?php echo site_url('messages');?>" data-notification="5" class="notifications"><img src="<?php echo img_url('inbox.png');?>"></a></li>
                             <ul class="nav navbar-nav navbar-left">
 
                                 <li class="dropdown">

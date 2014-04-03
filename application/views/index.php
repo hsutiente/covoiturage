@@ -92,11 +92,50 @@ $verifSession = $this->session->userdata('pseudoConnecte');
     <div class="container_page">
         <div class="container">
             <div class="corps">
-                <h3>Les 10 derniers annonces publiées </h3>
+                <h3>Les 10 derniers trajets publiés </h3>
                 <hr>
                 <?php
                 echo "- Au départ de ".$trajetunville." le ".$trajetundate." ";
                 echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajetunid.'/');?>">ici </a>
+                </br>
+                <?php
+                echo "- Au départ de ".$trajetdeuxville." le ".$trajetdeuxdate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajetdeuxid.'/');?>">ici </a>
+                </br>
+                <?php
+                echo "- Au départ de ".$trajettroisville." le ".$trajettroisdate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajettroisid.'/');?>">ici </a>
+                </br>
+                <?php
+                echo "- Au départ de ".$trajetquatreville." le ".$trajetquatredate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajetquatreid.'/');?>">ici </a>
+                </br>
+                <?php
+                echo "- Au départ de ".$trajetcinqville." le ".$trajetcinqdate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajetcinqid.'/');?>">ici </a>
+                </br>
+                <?php
+                echo "- Au départ de ".$trajetsixville." le ".$trajetsixdate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajetsixid.'/');?>">ici </a>
+                </br>
+                <?php
+                echo "- Au départ de ".$trajetseptville." le ".$trajetseptdate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajetseptid.'/');?>">ici </a>
+                </br>
+                <?php
+                echo "- Au départ de ".$trajethuitville." le ".$trajethuitdate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajethuitid.'/');?>">ici </a>
+                </br>
+                <?php
+                echo "- Au départ de ".$trajetneufville." le ".$trajetneufdate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajetneufid.'/');?>">ici </a>
+                </br>
+                <?php
+                echo "- Au départ de ".$trajetdixville." le ".$trajetdixdate." ";
+                echo "cliquez : "?><a href="<?php echo site_url('affichertrajet/afficher/'.$trajetdixid.'/');?>">ici </a>
+
+
+
                 </br>
                 </br>
                 <a href=""> Afficher tous les trajets</a>

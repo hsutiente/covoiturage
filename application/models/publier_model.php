@@ -22,6 +22,12 @@ class Publier_model extends CI_Model{
                     ->insert($this->tableVille);
             }
     }
+
+    /**
+     * @param $villeDepart
+     * @param $date
+     * @return bool
+     */
     public function ajouterTrajet($villeDepart,$date){
         if(!is_string($villeDepart) OR empty($villeDepart) OR (!is_string($date))  OR empty($date)){
             return false;
@@ -34,7 +40,3 @@ class Publier_model extends CI_Model{
         }
     }
 }
-
-
-
-

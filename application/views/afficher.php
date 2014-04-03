@@ -4,6 +4,7 @@
         <div id="corps">
             <h3>AFFICHAGE DU TRAJET SELECTIONNE</h3>
             <h4><?php echo $villeDepart." - Iut de Lens";?></h4>
+            <h5><a href="">S'inscrire à ce trajet ?</a></h5>
             <div id="directionsDiv"></div>
             <div id="map_canvas"></div>
 

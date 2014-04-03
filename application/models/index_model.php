@@ -4,6 +4,8 @@ class Index_model extends CI_Model{
 
     private $table = 'trajet';
 
+    /**
+     */
     public function recupererDernierTrajet(){
         $query = $this->db->select()
             ->from('trajet')
@@ -11,9 +13,10 @@ class Index_model extends CI_Model{
             ->result();
         return $query;
     }
-
+/**
+ */
     public function getDernierTrajet(){
-        $sql = "SELECT id,villeDepart, dateDepart FROM trajet ORDER BY dateDepart";
+        $sql = "SELECT id,villeDepart, dateDepart FROM trajet ORDER BY id desc";
         $resultat = $this->db->query($sql);
         return $resultat->result();
     }
