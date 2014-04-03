@@ -1,0 +1,13 @@
+1) Récupérer le fichier bdd.sql et l'importer dans une base de données.
+2) Ouvrir le fichier application/config/config.php
+3) Editer la ligne 17 : $config['base_url']	= 'http://localhost/NOM_DU_REPERTOIRE/';
+4) Ouvrir le fichier application/config/database.php
+5) Editer les lignes suivantes (51 à 55) en remplaçant par les informations vous permettant de vous connecter à la BDD.
+
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'root';
+$db['default']['database'] = 'covoiturage';
+$db['default']['dbdriver'] = 'mysql';
+
+6) Le site devrait être accessible à l'adresse indiquer durant l'étape 3
