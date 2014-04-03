@@ -10,6 +10,8 @@ class Affichertrajet extends CI_Controller {
         $this->load->library('session');
         $this->load->database();
         $this->load->helper(array('url','assets'));
+        $this->load->model('affichertrajet_model','affichetrajetManager');
+        $idinscrire = $this->uri->segment(3);
         $this->afficher();
     }
 
@@ -23,6 +25,8 @@ class Affichertrajet extends CI_Controller {
         }
         else
         {
+
+            $this->load->model('sinscrire_model','sinscrireManager');
             $view_data2 = array();
             $idtrajet = $this->uri->segment(3);
             $query = $this->db->query("SELECT login FROM utilisateur JOIN trajet ON trajet.idConducteur = utilisateur.id WHERE trajet.id =".$this->uri->segment(3));
@@ -55,7 +59,65 @@ class Affichertrajet extends CI_Controller {
             $config['onclick'] = 'alert(\'Coordonnées du click: \' + event.latLng.lat() + \', \' + event.latLng.lng());';
             $this->googlemaps->initialize($config);
             $view_data2['map'] = $this ->googlemaps ->create_map();
+
+            $tabIdParticipant = array();
+            $tabNomParticipant = array();
+
+            $resultat = $this->sinscrireManager->idParticipant($idtrajet);
+
+            foreach($resultat as $ligne){
+                $tabIdParticipant[] = $ligne->idParticipant;
+            }
+            for($i = 0 ; $i<count($tabIdParticipant) ; $i++){
+                $query = $this->db->query("select login from utilisateur where id =".$tabIdParticipant[$i]);
+                if ($query->num_rows() > 0)
+                {
+                    $row = $query->row();
+                    $tabNomParticipant[]=$row->login;
+                }
+            }
+//            if(isset($tabNomParticipant[0]))$view_data2['passager1'] = $tabNomParticipant[0];
+//            if(isset($tabNomParticipant[1]))$view_data2['passager2'] = $tabNomParticipant[1];
+//            if(isset($tabNomParticipant[2]))$view_data2['passager3'] = $tabNomParticipant[2];
+//            if(isset($tabNomParticipant[3]))$view_data2['passager4'] = $tabNomParticipant[3];
+
+            $nbParticipant = count($tabNomParticipant);
+            $view_data2['nbParticipant'] = $nbParticipant;
+            for($i = 0 ; $i<$nbParticipant ; $i++){
+                $j = $i+1;
+                if(isset($tabNomParticipant[$i]))$view_data2['passager'.$j] = $tabNomParticipant[$i];
+            }
             $this->load_view('afficher',$view_data2);
         }
+    }
+
+
+    public function sinscrire(){
+        $view_data = array();
+        if ($this->uri->segment(3) === FALSE)
+        {
+            redirect('/index/', 'refresh'); // Il n'y a pas d'id de trajet dans l'url, redirection vers l'index
+        }
+        else
+        {
+            $this->load->model('publier_model','publierManager');
+            $this->load->model('sinscrire_model','sinscrireManager');
+            $idtrajet = $this->uri->segment(3);
+            $resultat = $this->publierManager->getId();
+            foreach($resultat as $ligne){
+                $idparticipant = $ligne->id;
+            }
+            $query = $this->db->query("SELECT utilisateur.id FROM utilisateur JOIN trajet ON trajet.idConducteur = utilisateur.id WHERE trajet.id =".$this->uri->segment(3));
+            if ($query->num_rows() > 0){
+                $row = $query->row();
+                $idconducteur = $row->id;
+            }
+            // On a récupéré l'id du conducteur, l'id du participant
+
+            $this->sinscrireManager->inscription($idconducteur,$idparticipant,$idtrajet);
+            $this->load_view('inscriptiontrajet',$view_data);
+            $this->output->set_header('refresh:3; url='.site_url($uri = 'index'));
+        }
+
     }
 }

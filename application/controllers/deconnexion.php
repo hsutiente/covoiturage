@@ -21,8 +21,6 @@ class Deconnexion extends CI_Controller {
             $this->session->sess_destroy();
             $this->load_view('deconnexionReussie',$view_data);
             $this->output->set_header('refresh:3; url='.'index');
-
-
         }
         else{
             redirect('connexion', 'refresh');
