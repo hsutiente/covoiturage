@@ -22,12 +22,14 @@ class Publier extends CI_Controller {
 
 
         if($this->form_validation->run()){
+            print_r($this->input->post('date'));
             $villeDepart = $this->input->post('villeDepart');
             $date_us = $this->input->post('date');
             $date_fr = explode('/',$date_us);
-            $date = $date_fr[0]."-".$date_fr[1]."-".$date_fr[2];
+            $date = $date_fr[2]."-".$date_fr[1]."-".$date_fr[0];
             $this->publierManager->ajouterVille($villeDepart);
             $this->publierManager->ajouterTrajet($villeDepart,$date);
+            print_r($date);
             $this->load_view('ajouter',$view_data);
 
         }

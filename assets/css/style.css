@@ -16,6 +16,9 @@ body{
     background: #d9e021;
 
 }
+.map{
+    height: 10%;
+}
 #lens{
 
     margin-right: 5%;
@@ -39,11 +42,6 @@ body{
     background: #483d37;
     color: white;
 }
-
-
-
-
-
 
 .login{
     position: absolute;
