@@ -16,6 +16,13 @@ body{
     background: #d9e021;
 
 }
+.adp-text{
+    width: 96%;
+}
+
+#map_canvas{
+    width: 600px;
+    height: 500px;}
 #lens{
 
     margin-right: 5%;
@@ -29,7 +36,7 @@ body{
 #logo{
     margin-top: 10px;
     margin-right: -45px;
-}
+}aa
 
 .header{
     margin: 0;
@@ -39,11 +46,6 @@ body{
     background: #483d37;
     color: white;
 }
-
-
-
-
-
 
 .login{
     position: absolute;
