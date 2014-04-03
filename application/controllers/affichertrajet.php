@@ -22,7 +22,15 @@ class Affichertrajet extends CI_Controller {
 
         }
         else
-        {   $view_data2 = array();
+        {
+            $view_data2 = array();
+            $idtrajet = $this->uri->segment(3);
+            $query = $this->db->query("SELECT login FROM utilisateur JOIN trajet ON trajet.idConducteur = utilisateur.id WHERE trajet.id =".$this->uri->segment(3));
+            if ($query->num_rows() > 0){
+                $row = $query->row();
+                $view_data2['nomconducteur'] = $row->login;
+            }
+
             $query = $this->db->query("select * from trajet where id =".$this->uri->segment(3));
             if ($query->num_rows() > 0)
             {
@@ -33,6 +41,7 @@ class Affichertrajet extends CI_Controller {
                 $view_data2['nbKilometres'] = $row->nbKilometres;
                 $view_data2['villeDepart'] = $row->villeDepart;
                 $ville = $view_data2['villeDepart'];
+                $view_data2['conducteur'] = $this->session->userdata('pseudoConnecte');
             }
 
             $this->load->library('googlemaps');

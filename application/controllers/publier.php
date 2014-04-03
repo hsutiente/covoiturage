@@ -17,7 +17,12 @@ class Publier extends CI_Controller {
     public function publier(){
         $view_data = array();
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('villeDepart', '"Ville de départ"', 'trim|required|encode_php_tags|xss_clean');
+
+        $resultat = $this->publierManager->getId();
+        foreach($resultat as $ligne){
+            $idconducteur = $ligne->id;
+        }
+            $this->form_validation->set_rules('villeDepart', '"Ville de départ"', 'trim|required|encode_php_tags|xss_clean');
         $this->form_validation->set_rules('date', 'date', 'required');
 
 
@@ -27,7 +32,7 @@ class Publier extends CI_Controller {
             $date_fr = explode('/',$date_us);
             $date = $date_fr[2]."-".$date_fr[1]."-".$date_fr[0];
             $this->publierManager->ajouterVille($villeDepart);
-            $this->publierManager->ajouterTrajet($villeDepart,$date);
+            $this->publierManager->ajouterTrajet($villeDepart,$date,$idconducteur);
             $this->load_view('ajouter',$view_data);
         }
         else{

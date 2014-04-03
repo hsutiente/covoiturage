@@ -1,7 +1,7 @@
 <div class="container_page">
     <div class="container">
         <div class="corps">
-            <p style='float:right'>Déjà inscrit ? <br> <a href="">Connectez-vous</a></p>
+            <p style='float:right'>Déjà inscrit ? <br> <a href="<?php echo site_url('connexion');?>">Connectez-vous</a></p>
 
             <h3>INSCRIPTION VALIDEE</h3>
 
