@@ -16,7 +16,6 @@ class Publier extends CI_Controller {
 
     public function publier(){
         $verifSession = $this->session->userdata('pseudoConnecte');
-        echo $verifSession;
 
         if($verifSession){
             $view_data = array();
