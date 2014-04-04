@@ -1,4 +1,5 @@
 <?php
+//On récupère les données de la session afin de vérifier si l'utilisateur est connecté ou non
 $verifSession = $this->session->userdata('pseudoConnecte');
 ?>
     <?php

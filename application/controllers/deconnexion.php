@@ -17,6 +17,7 @@ class Deconnexion extends CI_Controller {
     {
         $view_data = array();
         $verifSession = $this->session->userdata('pseudoConnecte');
+        //Si l'utilisateur est connecté les données supplémentaires de la session seront supprimées
         if($verifSession){
             $this->session->sess_destroy();
             $this->load_view('deconnexionReussie',$view_data);

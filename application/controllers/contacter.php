@@ -19,10 +19,11 @@ class Contacter extends CI_Controller {
         $sujet = "message de ".$mail;
         $destinataire = "vlaour@gmail.com";
 
-        if(isset($_POST['message'])){;
-        mail($destinataire,$sujet,$message);
-        $this->load_view('mailenvoye',$view_data);
-        $this->output->set_header('refresh:3; url='.'index');
+        //On vérifie que le champs message existe, dans le cas contraire on redirige sur la page de contact
+        if(isset($_POST['message'])){
+            mail($destinataire,$sujet,$message);
+            $this->load_view('mailenvoye',$view_data);
+            $this->output->set_header('refresh:3; url='.'index');
         }
         else{
             $this->load_view('contact',$view_data);

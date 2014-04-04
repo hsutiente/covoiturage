@@ -123,7 +123,7 @@ class Affichertrajet extends CI_Controller {
                 $idconducteur = $row->id;
             }
             // On a récupéré l'id du conducteur, l'id du participant
-
+            // On vérifie que le conducteur et la  personne souhaitant participe sont bien deux individus distincts
             if($idconducteur==$idparticipant){
                 $this->load_view('condparticipant',$view_data);
                 $this->output->set_header('refresh:3; url='.site_url($uri = 'index'));
