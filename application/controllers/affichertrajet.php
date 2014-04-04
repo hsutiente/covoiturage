@@ -96,7 +96,6 @@ class Affichertrajet extends CI_Controller {
                 $view_data2['musique'] = $ligne->musique;
                 $view_data2['discussion'] = $ligne->discussion;
             }
-
             $this->load_view('afficher',$view_data2);
         }
     }

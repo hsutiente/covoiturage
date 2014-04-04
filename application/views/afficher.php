@@ -1,15 +1,24 @@
-
+<?php
+//On récupère les données de la session afin de vérifier si l'utilisateur est connecté ou non
+$verifSession = $this->session->userdata('pseudoConnecte');
+?>
 <div class="container_page">
     <div class="container">
         <div class="corps">
             <h3>AFFICHAGE DU TRAJET SELECTIONNE</h3>
             <h4><?php echo $villeDepart." -> Iut de Lens";?></h4>
             <h4><?php echo "Trajet proposé par ".$nomconducteur;?></h4>
+            <?php
+            if($verifSession){
+            ?>
             <form>
                 </br>
                 <h5><a href="<?php echo site_url('affichertrajet/sinscrire/'.$id);?>">S'inscrire à ce trajet ?</a></h5>
                 </br>
             </form>
+            <?php
+            }
+            ?>
             <div id="directionsDiv"></div>
             <div id="map_canvas"></div>
             <?php echo $map['js']; ?>
