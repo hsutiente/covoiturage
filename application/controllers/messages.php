@@ -24,9 +24,31 @@ class Messages extends CI_Controller {
         foreach($resultat1 as $ligne){
             $expediteurId = $ligne->id;
         }
+        $listeMessages = array();
         $resultat3 = $this->messageManager->getMessages($expediteurId);
         foreach($resultat3 as $ligne){
+            $listeMessages[] = $ligne->destinataire;
+            $listeMessages[] = $ligne->sujet;
+            $listeMessages[] = $ligne->message;
+        }
+        $nbEntite = count($listeMessages);
+        $view_data['nbEntite'] = $nbEntite;
 
+        $j = 1;
+        for($i = 0 ; $i<$nbEntite ; $i=$i+3){
+            if(isset($listeMessages[$i]))$view_data['dest'.$j] = $listeMessages[$i];
+            if(isset($listeMessages[$i]))$view_data['suj'.$j] = $listeMessages[$i+1];
+            if(isset($listeMessages[$i]))$view_data['messages'.$j] = $listeMessages[$i+2];
+            $j++;
+        }
+
+        $j = 1;
+        for($i = 0 ; $i<$nbEntite ; $i=$i+3){
+             $resultat4 = $this->messageManager->getNom($view_data['dest'.$j]);
+             foreach($resultat4 as $ligne){
+                 $view_data['dest'.$j] = $ligne->login;
+            }
+            $j++;
         }
         $resultat2 = $this->messageManager->getId($destinataireNom);
         foreach($resultat2 as $ligne){
@@ -40,6 +62,5 @@ class Messages extends CI_Controller {
             $this->load_view('messageEnvoye',$view_data);
             $this->output->set_header('refresh:3; url='.site_url($uri = 'messages'));
         }
-
     }
 }

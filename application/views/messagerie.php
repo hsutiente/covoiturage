@@ -34,6 +34,19 @@ if($verifSession){
         </div>
         <div class="corps">
             <h3>MESSAGES RECUS</h3>
+            <?php
+                $j=1;
+                for ($i = 0 ; $i<$nbEntite;$i=$i+3){
+                    $dest = "dest".$j;
+                    $suj = "suj".$j;
+                    $messages = "messages".$j;
+                    echo eval('return $'. $dest . ';')." ";
+                    echo eval('return $'. $suj . ';')." ";
+                    echo eval('return $'. $messages . ';')." ";
+                    echo "</br>";
+                    $j=$j+1;
+                }
+            ?>
         </div>
     </div>
 </div>

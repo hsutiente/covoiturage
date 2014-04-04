@@ -36,6 +36,7 @@ $verifSession = $this->session->userdata('pseudoConnecte');
             <hr>
             <p Style='text-align:justify;'>
                 <?php
+                $j = 1;
                 for ($i = 1 ; $i<$nbParticipant+1;$i++){
                     $passager = "passager".$i;
                     /*Permet de fabriquer des variables à partir d'une concaténation de chaines afin de récupérer les valeurs des
