@@ -124,9 +124,15 @@ class Affichertrajet extends CI_Controller {
             }
             // On a récupéré l'id du conducteur, l'id du participant
 
-            $this->sinscrireManager->inscription($idconducteur,$idparticipant,$idtrajet);
-            $this->load_view('inscriptiontrajet',$view_data);
-            $this->output->set_header('refresh:3; url='.site_url($uri = 'index'));
+            if($idconducteur==$idparticipant){
+                $this->load_view('condparticipant',$view_data);
+                $this->output->set_header('refresh:3; url='.site_url($uri = 'index'));
+            }
+            else{
+                $this->sinscrireManager->inscription($idconducteur,$idparticipant,$idtrajet);
+                $this->load_view('inscriptiontrajet',$view_data);
+                $this->output->set_header('refresh:3; url='.site_url($uri = 'index'));
+            }
         }
 
     }
