@@ -139,6 +139,8 @@ function create_champ(i) {
                         <ul class="nav navbar-nav">
                             <li ><a href="<?php echo site_url('trouver');?>">Trouver un trajet</a></li>
                             <li ><a href="<?php echo site_url('publier');?>">Publier un trajet</a></li>
+                            <li ><a href="<?php echo site_url('objectif');?>">Pourquoi utiliser le covoiturage</a></li>
+
                         </ul>
                         <ul  class="nav navbar-nav navbar-right">
                             <li><a href="<?php echo site_url('messages');?>" data-notification="5" class="notifications"><img src="<?php echo img_url('inbox.png');?>"></a></li>
