@@ -54,7 +54,7 @@ class Affichertrajet extends CI_Controller {
             $config['zoom'] = '13';
             $config['directions'] = TRUE;
             $config['directionsStart'] = $ville;
-            $config['directionsEnd'] = 'Lens,France';
+            $config['directionsEnd'] = 'IUT de Lens,France';
             $config['directionsDivID'] = 'directionsDiv';
             $config['onclick'] = 'alert(\'Coordonnées du click: \' + event.latLng.lat() + \', \' + event.latLng.lng());';
             $this->googlemaps->initialize($config);
