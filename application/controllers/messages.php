@@ -24,7 +24,10 @@ class Messages extends CI_Controller {
         foreach($resultat1 as $ligne){
             $expediteurId = $ligne->id;
         }
+        $resultat3 = $this->messageManager->getMessages($expediteurId);
+        foreach($resultat3 as $ligne){
 
+        }
         $resultat2 = $this->messageManager->getId($destinataireNom);
         foreach($resultat2 as $ligne){
             $destinataireId = $ligne->id;
@@ -33,9 +36,10 @@ class Messages extends CI_Controller {
             $this->load_view('messagerie',$view_data);
         }
         if(strlen($message)>0 AND strlen($sujet)>0 AND strlen($destinataireNom)>0){
-            $this->messageManager->posterMessage($message,$destinataireId,$expediteurId,$sujet);
+            $this->messageManager->posterMessage($message,$expediteurId,$destinataireId,$sujet);
             $this->load_view('messageEnvoye',$view_data);
             $this->output->set_header('refresh:3; url='.site_url($uri = 'messages'));
         }
+
     }
 }

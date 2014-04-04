@@ -19,6 +19,12 @@ class Messages_model extends CI_Model{
         return $resultat->result();
     }
 
+    public function getMessages($idExpediteur){
+        $sql = "SELECT * FROM message WHERE expediteur = ?";
+        $resultat = $this->db->query($sql, array($idExpediteur));
+        return $resultat->result();
+    }
+
 }
 
 
