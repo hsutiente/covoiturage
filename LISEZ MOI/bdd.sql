@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 04 Avril 2014 à 03:19
+-- G√©n√©r√© le: Ven 04 Avril 2014 √† 07:38
 -- Version du serveur: 5.5.25
 -- Version de PHP: 5.4.4
 
@@ -11,7 +11,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données: `covoiturage`
+-- Base de donn√©es: `covoiturage`
 --
 
 -- --------------------------------------------------------
@@ -35,12 +35,15 @@ CREATE TABLE `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
+('08b6657176083355ffb3072af7126b48', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396589857, 'a:3:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:7:"Quentin";s:4:"test";s:4:"test";}'),
+('1375088a9a16332ad7a3c220000e9e46', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396589343, 'a:3:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"Valentin";s:4:"test";s:4:"test";}'),
+('17f21a9b0dc618a9d4c2336548f9ef7e', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396577893, 'a:2:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"Valentin";}'),
 ('34a1b50e81383ecc922d383dbe638a0e', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396570570, 'a:2:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"Valentin";}'),
 ('3c6cc15e3e3ae09b0c010b602e517422', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396570176, 'a:2:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"Valentin";}'),
-('47f6c68672c9450110032480ac58945b', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396573839, 'a:2:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"Valentin";}'),
 ('6c3d2c70b33bec6ecf79c7bdc9b5caa8', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396568928, ''),
 ('87e8eed30f38a1b6cae059d15e1e6c91', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396569773, 'a:3:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:15:"UtilisateurTest";s:4:"test";s:4:"test";}'),
-('d4bcddd565ebd6ea3863807e92bff898', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396571363, 'a:3:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"valentin";s:4:"test";s:4:"test";}');
+('d4bcddd565ebd6ea3863807e92bff898', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396571363, 'a:3:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"valentin";s:4:"test";s:4:"test";}'),
+('e9696362ca33fdce65cf292aca622b13', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396589691, '');
 
 -- --------------------------------------------------------
 
@@ -115,7 +118,7 @@ CREATE TABLE `participer` (
   `idParticipant` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Contenu de la table `participer`
@@ -130,7 +133,9 @@ INSERT INTO `participer` (`id`, `idConducteur`, `idTrajet`, `idParticipant`) VAL
 (12, 36, 33, 36),
 (13, 38, 34, 37),
 (14, 36, 40, 36),
-(15, 36, 41, 36);
+(15, 36, 41, 36),
+(16, 36, 42, 38),
+(17, 36, 52, 39);
 
 -- --------------------------------------------------------
 
@@ -148,7 +153,7 @@ CREATE TABLE `preference` (
   `idTrajet` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Contenu de la table `preference`
@@ -157,7 +162,17 @@ CREATE TABLE `preference` (
 INSERT INTO `preference` (`id`, `fumeur`, `musique`, `fille`, `garcon`, `discussion`, `idTrajet`) VALUES
 (1, 'non', 'non', 'non', 'non', 'non', 40),
 (2, 'oui', 'oui', 'oui', 'oui', 'oui', 41),
-(3, 'non', 'oui', 'non', 'non', 'non', 42);
+(3, 'non', 'oui', 'non', 'non', 'non', 42),
+(4, 'oui', 'oui', 'non', 'non', 'non', 43),
+(5, 'non', 'non', 'non', 'non', 'oui', 44),
+(6, 'non', 'non', 'non', 'non', 'non', 45),
+(7, 'non', 'non', 'non', 'non', 'non', 46),
+(8, 'non', 'non', 'non', 'non', 'non', 47),
+(9, 'non', 'non', 'non', 'non', 'non', 48),
+(10, 'non', 'non', 'non', 'non', 'non', 49),
+(11, 'non', 'non', 'non', 'non', 'non', 50),
+(12, 'non', 'non', 'non', 'non', 'non', 51),
+(13, 'non', 'non', 'non', 'non', 'non', 52);
 
 -- --------------------------------------------------------
 
@@ -175,35 +190,23 @@ CREATE TABLE `trajet` (
   `idConducteur` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
 
 --
 -- Contenu de la table `trajet`
 --
 
 INSERT INTO `trajet` (`id`, `dateDepart`, `nbPlace`, `nbKilometres`, `idPreference`, `villeDepart`, `idConducteur`) VALUES
-(18, '2014-04-01', NULL, NULL, NULL, 'Méricourt', 36),
-(19, '2014-04-09', NULL, NULL, NULL, 'Harnes', 36),
-(20, '2014-04-02', NULL, NULL, NULL, 'Rouvroy', 36),
-(21, '2014-04-09', NULL, NULL, NULL, 'bruay la buissiere', 36),
-(22, '2014-04-15', NULL, NULL, NULL, 'Noyelles sous lens', 36),
-(23, '2014-04-08', NULL, NULL, NULL, 'liévin', 36),
-(24, '2014-04-09', NULL, NULL, NULL, 'Grenay', 36),
-(25, '2014-04-10', NULL, NULL, NULL, 'Avion', 36),
-(27, '2014-04-15', NULL, NULL, NULL, 'Lille', 36),
-(29, '2014-04-15', NULL, NULL, NULL, 'Béthune', 36),
-(30, '2014-04-24', NULL, NULL, NULL, 'Méricourt', 36),
-(31, '2014-04-23', NULL, NULL, NULL, 'harnes', 37),
-(32, '2014-04-28', NULL, NULL, NULL, 'Méricourt', 37),
-(33, '2014-04-29', NULL, NULL, NULL, 'Béthune', 36),
-(34, '2014-04-29', NULL, NULL, NULL, 'Maubeuge', 38),
-(36, '2014-04-22', NULL, NULL, NULL, 'Méricourt', 36),
-(37, '2014-04-22', NULL, NULL, NULL, 'Méricourt', 36),
-(38, '2014-04-22', NULL, NULL, NULL, 'Méricourt', 36),
-(39, '2014-04-22', NULL, NULL, NULL, 'Méricourt', 36),
-(40, '2014-04-01', NULL, NULL, NULL, 'Méricourt', 36),
-(41, '2014-04-22', NULL, NULL, NULL, 'Méricourt', 36),
-(42, '2014-04-15', NULL, NULL, NULL, 'Lens', 36);
+(43, '2014-04-01', NULL, NULL, NULL, 'M√©ricourt', 36),
+(44, '2014-04-02', NULL, NULL, NULL, 'Noyelles sous lens', 36),
+(45, '2014-04-03', NULL, NULL, NULL, 'Harnes', 36),
+(46, '2014-04-04', NULL, NULL, NULL, 'Arleux en gohelle', 36),
+(47, '2014-04-03', NULL, NULL, NULL, 'Avion', 36),
+(48, '2014-04-08', NULL, NULL, NULL, 'B√©thune', 36),
+(49, '2014-04-17', NULL, NULL, NULL, 'Li√©vin', 36),
+(50, '2014-04-28', NULL, NULL, NULL, 'Bruay la buissiere', 36),
+(51, '2014-04-23', NULL, NULL, NULL, 'Rouvroy', 36),
+(52, '2014-05-21', NULL, NULL, NULL, 'Oppy', 36);
 
 -- --------------------------------------------------------
 
@@ -250,31 +253,5 @@ CREATE TABLE `ville` (
   `codePostal` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
-
---
--- Contenu de la table `ville`
---
-
-INSERT INTO `ville` (`id`, `nom`, `codePostal`) VALUES
-(34, 'liévin', NULL),
-(35, 'Grenay', NULL),
-(36, 'Avion', NULL),
-(37, 'Béthunes', NULL),
-(38, 'Lille', NULL),
-(39, 'Béthunes nord pas de calais', NULL),
-(40, 'Béthune', NULL),
-(41, 'Méricourt', NULL),
-(42, 'harnes', NULL),
-(43, 'Méricourt', NULL),
-(44, 'Béthune', NULL),
-(45, 'Maubeuge', NULL),
-(46, 'Méricourt', NULL),
-(47, 'Méricourt', NULL),
-(48, 'Méricourt', NULL),
-(49, 'Méricourt', NULL),
-(50, 'Méricourt', NULL),
-(51, 'Méricourt', NULL),
-(52, 'Méricourt', NULL),
-(53, 'Lens', NULL);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=64 ;
 
