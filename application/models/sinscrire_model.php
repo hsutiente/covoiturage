@@ -20,4 +20,10 @@ class Sinscrire_model extends CI_Model{
         $resultat = $this->db->query($sql, array($idtrajet));
         return $resultat->result();
     }
+
+    public function getPreferences($idTrajet){
+        $sql = "SELECT * FROM preference WHERE idTrajet = ?";
+        $resultat = $this->db->query($sql, array($idTrajet));
+        return $resultat->result();
+    }
 }

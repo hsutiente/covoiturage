@@ -4,12 +4,20 @@ class Publier_model extends CI_Model{
 
     private $tableVille = 'ville';
     private $tableTrajet = 'trajet';
+    private $tablePreference = 'preference';
+
 
 
     public function getId(){
         $login = $this->session->userdata('pseudoConnecte');
         $sql = "SELECT id FROM utilisateur WHERE login = ?";
         $resultat = $this->db->query($sql, array($login));
+        return $resultat->result();
+    }
+
+    public function getLastId(){
+        $sql = "SELECT MAX(id) as id FROM trajet ORDER BY id desc";
+        $resultat = $this->db->query($sql);
         return $resultat->result();
     }
     /**
@@ -46,5 +54,16 @@ class Publier_model extends CI_Model{
                 'idConducteur'=>$idconducteur))
                 ->insert($this->tableTrajet);
         }
+    }
+
+    public function ajouterPreference($idTrajet,$fumeur,$homme,$femme,$discussion,$musique){
+        return $this->db->set(array(
+            'fumeur' => $fumeur,
+            'garcon'=>$homme,
+            'discussion'=>$discussion,
+            'musique'=>$musique,
+            'idTrajet'=>$idTrajet,
+            'fille'=>$femme))
+            ->insert($this->tablePreference);
     }
 }

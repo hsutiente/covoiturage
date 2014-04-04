@@ -67,10 +67,10 @@ function create_champ(i) {
 
     var nb = i + 1;
 
-    document.getElementById('par_'+i).innerHTML = '<span id="par_'+i+'"> <img src="img/marker_2.png"> <label> Par </label> <input type="text" name="villeEtape_'+i+'">';
+    document.getElementById('par_'+i).innerHTML = '<span id="par_'+i+'"> <img src="<?php echo img_url('marker_2.png')?>"> <label> Par </label> <input type="text" name="villeEtape_'+i+'">';
     document.getElementById('par_'+i).innerHTML += 'Heure <select name="heure_'+i+'"> <option value=""></option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>  <option value="5">5</option><option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option> <option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option> </select> ';
     document.getElementById('par_'+i).innerHTML += '<select  name="minute_'+i+'" > <option value=""></option> <option value="00">00</option>  <option value="15">15</option> <option value="30">30</option>  <option value="45">45</option> </select>';
-    document.getElementById('par_'+i).innerHTML += (i <= 5) ? '<br /><span id="par_'+nb+'"><img src="img/marker_2.png"> <label>Par</label> <a class="btn btn-default" href="javascript:create_champ('+nb+')">Ajouter une étape</a> <span Style="color:Gray;">ASTUCE : ajouter des étapes permet de trouver plus de passagers!</span>  <a rel="tooltip" title="Choisis jusqu\'à 5 lieux / villes le long de ton itinéraire comme étapes – ça en vaut la peine."><img src="img/icon_tooltip.gif"></a></span>' : '';
+    document.getElementById('par_'+i).innerHTML += (i <= 5) ? '<br /><span id="par_'+nb+'"><img src="<?php echo img_url('marker_2.png')?>"> <label>Par</label> <a class="btn btn-default" href="javascript:create_champ('+nb+')">Ajouter une étape</a> <span Style="color:Gray;">ASTUCE : ajouter des étapes permet de trouver plus de passagers!</span>  <a rel="tooltip" title="Choisis jusqu\'à 5 lieux / villes le long de ton itinéraire comme étapes – ça en vaut la peine."><img src="img/icon_tooltip.gif"></a></span>' : '';
 
 }
 
@@ -131,7 +131,7 @@ function create_champ(i) {
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.php">Acceuil</a>
+                        <a class="navbar-brand" href="<?php echo site_url('index');?>">Acceuil</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->

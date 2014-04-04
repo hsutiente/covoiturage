@@ -85,11 +85,11 @@
 
                     <label>Options de recherche</label> <br><br>
 
-                    <input type='checkbox'> Réservé aux femmes<a rel="tooltip" title="Si vous cochez cette option, votre trajet sera proposé aux femmes."><img src="<?php echo img_url('icon_tooltip.gif')?>"></a> <br>
-                    <input type='checkbox'> Réservé aux hommes<a rel="tooltip" title="Si vous cochez cette option, votre trajet sera proposé aux hommes."><img src="<?php echo img_url('icon_tooltip.gif')?>"></a> <br>
-                    <input type='checkbox'> Fumeurs <br>
-                    <input type='checkbox'> Musiques <br>
-                    <input type='checkbox'> Discussion <br> <br>
+                    <input type='checkbox' name="femme"> Réservé aux femmes<a rel="tooltip" title="Si vous cochez cette option, votre trajet sera proposé aux femmes."><img src="<?php echo img_url('icon_tooltip.gif')?>"></a> <br>
+                    <input type='checkbox' name="homme"> Réservé aux hommes<a rel="tooltip" title="Si vous cochez cette option, votre trajet sera proposé aux hommes."><img src="<?php echo img_url('icon_tooltip.gif')?>"></a> <br>
+                    <input type='checkbox' name="fumeur"> Fumeurs <br>
+                    <input type='checkbox' name="musique"> Musiques <br>
+                    <input type='checkbox' name="discussion"> Discussion <br> <br>
                   
 
                     <label>Commentaire</label>

@@ -87,6 +87,16 @@ class Affichertrajet extends CI_Controller {
                 $j = $i+1;
                 if(isset($tabNomParticipant[$i]))$view_data2['passager'.$j] = $tabNomParticipant[$i];
             }
+
+            $resultat = $this->sinscrireManager->getPreferences($idtrajet);
+            foreach($resultat as $ligne){
+                $view_data2['fumeur'] = $ligne->fumeur;
+                $view_data2['femme'] = $ligne->fille;
+                $view_data2['homme'] = $ligne->garcon;
+                $view_data2['musique'] = $ligne->musique;
+                $view_data2['discussion'] = $ligne->discussion;
+            }
+
             $this->load_view('afficher',$view_data2);
         }
     }

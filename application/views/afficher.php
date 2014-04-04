@@ -35,5 +35,18 @@
                 ?>
             </p>
         </div>
+        <div class="info">
+            <h4>Préférences de ce trajet</h4>
+            <hr>
+            <p Style='text-align:justify;'>
+                <?php
+                echo "Fumeur : ".$fumeur.'</br>';
+                echo "Reservé aux femmes : ".$femme.'</br>';
+                echo "Reservé aux hommes : ".$homme.'</br>';
+                echo "Musique : ".$musique.'</br>';
+                echo "Discussion : ".$discussion.'</br>';
+                ?>
+            </p>
+        </div>
     </div>
 </div>
