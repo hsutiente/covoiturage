@@ -40,9 +40,9 @@ if($verifSession){
                     $dest = "dest".$j;
                     $suj = "suj".$j;
                     $messages = "messages".$j;
-                    echo eval('return $'. $dest . ';')." ";
-                    echo eval('return $'. $suj . ';')." ";
-                    echo eval('return $'. $messages . ';')." ";
+                    echo "Expéditeur : ".eval('return $'. $dest . ';')." ";
+                    echo "Sujet : ".eval('return $'. $suj . ';')." ";
+                    echo "Message : ".eval('return $'. $messages . ';')." ";
                     echo "</br>";
                     $j=$j+1;
                 }
@@ -50,9 +50,6 @@ if($verifSession){
         </div>
     </div>
 </div>
-
-
-
 
 <?php
 }
