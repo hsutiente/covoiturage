@@ -73,7 +73,7 @@
                         <input  class="form-control" type="date"></td>
                     </div>
                 </div>
-                <input Style='background:#d9e021 ' type="submit" class="btn btn-default" value="Publier son trajet">
+                <input Style='background:#d9e021 ' type="submit" class="btn btn-default" value="Trouver son trajet">
             </form>
         </div>
     </div>
