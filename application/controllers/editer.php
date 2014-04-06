@@ -26,17 +26,26 @@ class Editer extends CI_Controller {
 
     public function editer()
     {
+
         $view_data = array();
         $pseudo = $this->session->userdata('pseudoConnecte');
+        if(strlen($pseudo)==0){
+            echo $pseudo;
+            $this->load_view("vousinscrire");
+            $this->output->set_header('refresh:3; url='.site_url($uri = 'index'));
+            return 0;
+        }
         $resultat = $this->editerManager->getMail();
         foreach($resultat as $ligne){
-            if($ligne->login == $pseudo){
+            if(strtolower($ligne->login) == strtolower($pseudo)){
                 $view_data['email'] = $ligne->email;
             }
         }
+
         $pass1 = $this->input->post('pass1');
         $pass2 = $this->input->post('pass2');
         $mail = $this->input->post('email');
+
 
 
         if((isset($pass1)) AND (isset($pass2)) AND ($pass1!=$pass2)){

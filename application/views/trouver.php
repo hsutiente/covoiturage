@@ -76,14 +76,5 @@
                 <input Style='background:#d9e021 ' type="submit" class="btn btn-default" value="Publier son trajet">
             </form>
         </div>
-
-        <div class="info">
-            <h4>Inscrivez-vous gratuitement !</h4>
-
-            <hr>
-            <p Style='text-align:justify;'>
-                Notre site met en relation conducteurs et passagers. Que vous soyez conducteur à la recherche de passagers, ou passager à la recherche d'une place libre, consultez les profils et évaluations de vos covoitureurs et voyagez en toute confiance !
-            </p>
-        </div>
     </div>
 </div>
