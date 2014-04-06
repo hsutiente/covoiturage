@@ -42,6 +42,7 @@ class Inscription extends CI_Controller
         $this->form_validation->set_message('valid_email', "l'adresse email est invalide");
         $this->form_validation->set_message('required', "Vous n'avez pas entré d'adresse mail");
 
+
         if($this->form_validation->run())
         {
             //Le formulaire est valide
