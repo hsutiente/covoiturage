@@ -10,7 +10,6 @@ class Index extends CI_Controller {
         $this->load->model('index_model','indexManager');
         $this->load->model('admin_model','adminManager');
         $verifSession = $this->session->userdata('pseudoConnecte');
-        $verifSession = $this->session->userdata('pseudoConnecte');
         if(strlen($verifSession)>0){
             $resultat = $this->adminManager->getBanni($verifSession);
             $banni = 0;
@@ -27,7 +26,17 @@ class Index extends CI_Controller {
     }
 
     public function accueil(){
+
+        $verifSession = $this->session->userdata('pseudoConnecte');
+        $resultat = $this->adminManager->getAdmin($verifSession);
+        $admin = 0;
+        foreach($resultat as $ligne){
+            $admin = $ligne ->admin;
+        }
+
         $view_data = array();
+        $view_data['admin'] = $admin;
+
         $resultat = $this->indexManager->getDernierTrajet();
         $cpt = 0;
         $listeDate = array();

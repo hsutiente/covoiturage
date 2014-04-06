@@ -118,5 +118,16 @@ $verifSession = $this->session->userdata('pseudoConnecte');
                 <h3>Suivez-nous sur FB</h3>
                 <hr>
             </div>
+            <?php
+            if($admin){
+            ?>
+                    <div class="info">
+                        <h3>ADMINISTRATION</h3>
+                        <hr>
+                        <a href = "<?php echo site_url('admin');?>">Panneau d'administration</a>
+                    </div>
+            <?php
+            }
+            ?>
         </div>
     </div>

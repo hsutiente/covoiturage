@@ -45,7 +45,7 @@ class Admin extends CI_Controller {
         $this->load->view('admin',$view_data);
     }
 
-    public function supprimerUtilisateur(){
+    public function bannirUtilisateur(){
         if ($this->uri->segment(3) === FALSE)
         {
             redirect('/admin/', 'refresh');
@@ -55,7 +55,16 @@ class Admin extends CI_Controller {
         $this->adminManager->bannirUtilisateur($pseudoASupprimer);
         redirect('/admin/', 'refresh');
     }
-
+    public function debannirUtilisateur(){
+        if ($this->uri->segment(3) === FALSE)
+        {
+            redirect('/admin/', 'refresh');
+        }
+        $this->load->model('admin_model','adminManager');
+        $pseudoASupprimer = $this->uri->segment(3);
+        $this->adminManager->debannirUtilisateur($pseudoASupprimer);
+        redirect('/admin/', 'refresh');
+    }
     public function supprimerTrajet(){
         if ($this->uri->segment(3) === FALSE)
         {

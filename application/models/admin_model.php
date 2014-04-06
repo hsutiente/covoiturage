@@ -27,6 +27,11 @@ class Admin_model extends CI_Model{
         $resultat = $this->db->query($sql,$login);
     }
 
+    public function debannirUtilisateur($login){
+        $sql = "UPDATE utilisateur SET banni = 0 WHERE login = ?";
+        $resultat = $this->db->query($sql,$login);
+    }
+
     public function getBanni($login){
         $sql = "SELECT banni from utilisateur where login = ?";
         $resultat = $this->db->query($sql,$login);
