@@ -12,6 +12,18 @@ class Affichertrajet extends CI_Controller {
         $this->load->helper(array('url','assets'));
         $this->load->model('affichertrajet_model','affichetrajetManager');
         $idinscrire = $this->uri->segment(3);
+        $verifSession = $this->session->userdata('pseudoConnecte');
+        if(strlen($verifSession)>0){
+            $resultat = $this->adminManager->getBanni($verifSession);
+            $banni = 0;
+            foreach($resultat as $ligne){
+                $banni = $ligne->banni;
+            }
+            if($banni == 1){
+                $this->load_view("banni");
+                return 0;
+            }
+        }
         $this->afficher();
     }
 
@@ -96,6 +108,7 @@ class Affichertrajet extends CI_Controller {
                 $view_data2['musique'] = $ligne->musique;
                 $view_data2['discussion'] = $ligne->discussion;
             }
+
             $this->load_view('afficher',$view_data2);
         }
     }
