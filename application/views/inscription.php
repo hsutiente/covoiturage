@@ -22,8 +22,10 @@
                     <table cellspacing="10" width="500">
 
                         <tr>
-                            <td colspan='4' height="50"><label for='login'>Login</label></td>
+                            <td colspan='4' height="50"><label for='login'>Nom d'utilisateur</label></td>
                             <td colspan='2'> <input class="form-control" type='text' id='login' name='login'> </td>
+                            <?php
+                            echo form_error('login'); ?>
                         </tr>
 
                         <tr>
@@ -47,6 +49,8 @@
                         <tr>
                             <td colspan='4' height="50"><label for='pass'>Mot de passe</label></td>
                             <td colspan='2'> <input class="form-control" type='password' id='pass' name='pass'> </td>
+                            <?php
+                            echo form_error('pass'); ?>
                         </tr>
 
                         <tr>

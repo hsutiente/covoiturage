@@ -35,7 +35,7 @@ class Inscription extends CI_Controller
         //	Chargement de la bibliothèque
         $this->load->library('form_validation');
         // Vérifier le formulaire
-        $this->form_validation->set_rules('login', '"Nom d\'utilisateur"', 'trim|required|min_length[5]|max_length[52]|alpha_dash|encode_php_tags|xss_clean');
+        $this->form_validation->set_rules('login', '"Nom d\'utilisateur"', 'trim|required|min_length[5]|max_length[52]|alpha_dash|encode_php_tags|xss_clean|');
         $this->form_validation->set_rules('pass',    '"Mot de passe"',       'trim|required|min_length[5]|max_length[52]|alpha_dash|encode_php_tags|xss_clean');
         $this->form_validation->set_rules('email',    '"Email"',       'required|valid_email');
         $this->form_validation->set_rules('fonction',    '"Fonction"',       'trim|required|min_length[5]|max_length[52]|alpha_dash|encode_php_tags|xss_clean');
