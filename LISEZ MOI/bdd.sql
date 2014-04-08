@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Dim 06 Avril 2014 à 14:42
+-- Généré le: Mar 08 Avril 2014 à 16:46
 -- Version du serveur: 5.5.25
 -- Version de PHP: 5.4.4
 
@@ -37,11 +37,14 @@ CREATE TABLE `ci_sessions` (
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
 ('106fe3bf192c007124e40240484fde58', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396786062, ''),
 ('11f9209bb3cacefe3a1bb18362b30be0', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396759386, 'a:2:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:6:"Loubna";}'),
-('1665c77e6b2314e02d37abd6c9d01ca8', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396786263, 'a:2:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"valentin";}'),
 ('4db752283c5e0b9377bb0314999934af', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396785748, 'a:1:{s:14:"pseudoConnecte";s:8:"valentin";}'),
 ('93e29f1778e24fbf32f1c3b058cb968d', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396786062, ''),
+('a4edd7fbb3e94b9e244b18003971e5d3', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396953142, ''),
+('bd9c748cf9c477cc730d0218946a3f9c', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396952772, ''),
+('bed3270d135ee66d2779ad748619b2fb', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396795917, ''),
 ('c7810ea4a68e7c5c356ab780a75ccddf', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396754166, 'a:2:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"Valentin";}'),
-('e6fa7e68995f75fc2c0d105904680c08', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396760368, 'a:2:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"Valentin";}');
+('e6fa7e68995f75fc2c0d105904680c08', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396760368, 'a:2:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:8:"Valentin";}'),
+('fc35ef10fe4c8fc6953cb1aa79f878ae', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1396968142, 'a:3:{s:9:"user_data";s:0:"";s:14:"pseudoConnecte";s:7:"QUentin";s:4:"test";s:4:"test";}');
 
 -- --------------------------------------------------------
 
@@ -96,19 +99,19 @@ CREATE TABLE `etape` (
 CREATE TABLE `message` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `sujet` varchar(50) DEFAULT NULL,
-  `message` varchar(50) DEFAULT NULL,
+  `message` varchar(5000) DEFAULT NULL,
   `destinataire` int(11) DEFAULT NULL,
   `expediteur` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Contenu de la table `message`
 --
 
 INSERT INTO `message` (`id`, `sujet`, `message`, `destinataire`, `expediteur`) VALUES
-(18, 'test', 'Message de Valentin : message de test', 39, 36);
+(26, 'test sujet', 'Message de quentin : test message', 39, 39);
 
 -- --------------------------------------------------------
 
@@ -123,7 +126,7 @@ CREATE TABLE `participer` (
   `idParticipant` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Contenu de la table `participer`
@@ -141,7 +144,9 @@ INSERT INTO `participer` (`id`, `idConducteur`, `idTrajet`, `idParticipant`) VAL
 (15, 36, 41, 36),
 (16, 36, 42, 38),
 (17, 36, 52, 39),
-(18, 36, 52, 39);
+(18, 36, 52, 39),
+(19, 36, 49, 39),
+(20, 36, 45, 39);
 
 -- --------------------------------------------------------
 
@@ -243,7 +248,7 @@ CREATE TABLE `utilisateur` (
   `banni` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
 
 --
 -- Contenu de la table `utilisateur`
