@@ -116,7 +116,6 @@ class Admin extends CI_Controller {
             $nbTrajets++;
         }
         $view_data['nbTrajets'] = $nbTrajets;
-
         for($i = 0 ; $i<$nbTrajets ; $i++){
             $j = $i+1;
             if(isset($listeDate[$i]))$view_data['date'.$j] = $listeDate[$i];
@@ -124,7 +123,5 @@ class Admin extends CI_Controller {
             if(isset($listeVilleDepart[$i]))$view_data['villedepart'.$j] = $listeVilleDepart[$i];
         }
         $this->load->view('adminTrajets',$view_data);
-
-
     }
 }

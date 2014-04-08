@@ -61,6 +61,11 @@ class Inscription extends CI_Controller
                     $this->input->post('pass'),
                     $this->input->post('email'),
                     $this->input->post('fonction'));
+                $emailInscrit = $this->input->post('email');
+                $sujet = "Confirmation de votre inscription à Covoiturage IUT-Lens";
+                $message = "Bonjour, \n\n Nous vous confirmons votre inscription à Covoiturage IUT-Lens.\n\n Vous avez utilisé le login suivant :  ".$this->input->post('login').
+                    "\n\n Bonne visite sur notre site.";
+                mail($emailInscrit,$sujet,$message);
                 $this->load_view('inscriptionValidee',$view_data);
             }
             else{
