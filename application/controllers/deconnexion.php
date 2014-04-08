@@ -16,7 +16,7 @@ class Deconnexion extends CI_Controller {
             $resultat = $this->adminManager->getBanni($verifSession);
             $banni = 0;
             foreach($resultat as $ligne){
-                $banni = $ligne->banni;
+
             }
             if($banni == 1){
                 $this->load_view("banni");
