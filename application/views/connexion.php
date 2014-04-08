@@ -2,7 +2,6 @@
         <div class="container">
             <div class="corps">
                 <p style='float:right'>Toujours pas inscrit ? <br> <a href="<?php echo site_url('inscription');?>">Inscrivez-vous maintenant !</a></p>
-
                 <h3>CONNEXION</h3>
                 <hr>
                 <form id = "formConnexion" action="<?php echo site_url('connexion');?>" method="post">
@@ -24,6 +23,7 @@
                         <tr>
                             <td colspan='4' height="50"></td>
                             <td align='centre'><input Style='background:#d9e021 ' type="submit" class="btn btn-default" value="Se connecter"></td>
+                            <a href="<?php echo site_url('connexion/passoublie');?>">Mot de passe oublié ?</a></p>
 
                         </tr>
                     </table>

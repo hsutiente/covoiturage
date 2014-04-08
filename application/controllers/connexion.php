@@ -53,4 +53,8 @@ class Connexion extends CI_Controller {
             redirect('index', 'refresh');
         }
     }
+
+    public function passoublie(){
+
+    }
 }

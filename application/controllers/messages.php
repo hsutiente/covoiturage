@@ -28,7 +28,7 @@ class Messages extends CI_Controller {
     public function messages(){
         $view_data = array();
 
-        $expediteurNom = $this->session->userdata('pseudoConnecte');
+        $expediteurNom = strtolower($this->session->userdata('pseudoConnecte'));
         $destinataireNom = $this->input->post('destinataire');
         $sujet = $this->input->post('sujet');
         $message = "Message de ".$expediteurNom." : ".$this->input->post('message');
