@@ -2,8 +2,8 @@
 //On récupère les données de la session afin de vérifier si l'utilisateur est connecté ou non
 $verifSession = $this->session->userdata('pseudoConnecte');
 ?>
-    <?php
-    if(!$verifSession){
+<?php
+if(!$verifSession){
     ?>
 
     <div id="rechercher">
@@ -19,11 +19,11 @@ $verifSession = $this->session->userdata('pseudoConnecte');
                             <td colspan="3"> <label for='villeDepart'>Ville de départ</label> </td>
                             <td ><input search="ville" class="ui-autocomplete-input" autocomplete="off" id='villeDepart' type="text" name="depart"> </td>
                             <td width='10'></td>
-                            
-                            <td colspan="3"><label for='dateDepart'>Date de départ</label></td> 
+
+                            <td colspan="3"><label for='dateDepart'>Date de départ</label></td>
 
                             <td width='240'><input class="form-control" id='dateDepart' type='text' name="dateDepart" onclick="ds_sh(this);"></td>
-                            
+
                             <td><input type="submit" class="btn btn-default" value="Rechercher"></td>
                             <table class="ds_box" cellpadding="0" cellspacing="0" id="ds_conclass" style="display: none;">
                                 <tr>
@@ -58,7 +58,7 @@ $verifSession = $this->session->userdata('pseudoConnecte');
                                 </select>
                             </td>
                         </tr>
-                        
+
                         <tr>
                             <td><label for="depart_km">Ville de départ</label></td>
                             <td>
@@ -69,7 +69,7 @@ $verifSession = $this->session->userdata('pseudoConnecte');
                                 </select>
                             </td>
                         </tr>
-                        
+
                         <tr>
                             <td><label for="tri">Trier par</label></td>
                             <td colspan="3">
@@ -88,46 +88,76 @@ $verifSession = $this->session->userdata('pseudoConnecte');
         </div>
     </div>
 <?php
-    }
+}
 ?>
-    <div class="container_page">
-        <div class="container">
-            <div class="corps">
-                <h3>Les derniers trajets publiés </h3>
-                <hr>
-                <?php
-                $j = 1;
-                for ($i = 1 ; $i<$cpt+1;$i++){
-                    $ville = "ville".$i;
-                    $id = "id".$i;
-                    $date = "date".$i;
-                    echo "- Au départ de ";
-                    echo eval('return $'. $ville. ';');
-                    echo " le ";
-                    echo eval('return $'. $date. ';');
-                    echo " cliquez"."<a href = ".site_url('affichertrajet/afficher/'.eval('return $'. $id . ';')."> : ici</a>");
-                    echo "</br>";
-                }
-                ?>
-                </br>
-                </br>
-                <a href=""> Afficher tous les trajets</a>
+<div class="container_page">
+    <div class="container">
+        <div class="corps">
+            <h3>Les derniers trajets publiés </h3>
+            <hr>
+            <?php
+            $j = 1;
+            echo "<table class='table table-hover'>";
+            echo "<tr>";
+            echo "<th>N°</th>";
+            echo "<th><img src=";
+            echo img_url('marker.png');
+            echo "> Lieu de Départ</th>";
+            echo "<th>Date</th>";
+            echo "<th>Afficher ce trajet</th>";
+            echo "</tr>";
 
-            </div>
-            <div class="info">
-                <h3>Suivez-nous sur FB</h3>
-                <hr>
-            </div>
-            <?php
-            if($admin){
-            ?>
-                    <div class="info">
-                        <h3>ADMINISTRATION</h3>
-                        <hr>
-                        <a href = "<?php echo site_url('admin');?>">Panneau d'administration</a>
-                    </div>
-            <?php
+            for ($i = 1 ; $i<$cpt+1;$i++){
+                $ville = "ville".$i;
+                $id = "id".$i;
+                $date = "date".$i;
+
+
+
+                echo "<tr>";
+
+                echo "<td>";
+                echo $i;
+                echo "</td>";
+
+                echo "<td>";
+                echo eval('return $'. $ville. ';');
+                echo "</td>";
+
+                echo "<td>";
+                echo eval('return $'. $date. ';');
+                echo "</td>";
+
+                // echo "<td> cliquez"."<a href = ".site_url('affichertrajet/afficher/'.eval('return $'. $id . ';')."> : ici</a> </td>");
+
+                echo "<td align='centre'> <a href = ".site_url('affichertrajet/afficher/'.eval('return $'. $id . ';')."> <img title='Afficher ce trajet' src=".img_url('open.png')."> </a> </td>");
+
+                echo "</tr>";
+
+
+
             }
+            echo "</table>";
             ?>
+            </br>
+            </br>
+            <a href=""> Afficher tous les trajets</a>
+
         </div>
+        <div class="info">
+            <h3>Suivez-nous sur FB</h3>
+            <hr>
+        </div>
+        <?php
+        if($admin){
+            ?>
+            <div Style='margin-top:20px;' class="info">
+                <h3>ADMINISTRATION</h3>
+                <hr>
+                <a href = "<?php echo site_url('admin');?>">Panneau d'administration</a>
+            </div>
+        <?php
+        }
+        ?>
     </div>
+</div>

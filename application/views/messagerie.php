@@ -4,57 +4,78 @@ $verifSession = $this->session->userdata('pseudoConnecte');
 ?>
 <?php
 if($verifSession){
-?>
-<div class="container_page">
-    <div class="container">
-        <div class="corps">
-            <h3>ENVOYER UN MESSAGE</h3>
-            <hr>
-            <form id = "formInscription" action="<?php echo site_url('messages');?>" method="post">
-                <table cellspacing="10" width="500">
-                    <tr>
-                        <td colspan='4' height="50"><label for='destinataire'>Destinataire</label></td>
-                        <td colspan='2'> <input class="form-control" type='text' id='destinataire' name='destinataire'> </td>
-                    </tr>
-                    <tr>
-                        <td colspan='4' height="50"><label for='sujet'>Sujet</label></td>
-                        <td colspan='2'> <textarea id="sujet" name="sujet" rows='1' cols='85'></textarea></td>
-                    </tr>
-                    <tr>
-                        <td colspan='4' height="50"><label for='message'>Message</label></td>
-                        <td colspan='2'> <textarea id="message" name="message" rows='7' cols='85'></textarea></td>
-                    </tr>
+    ?>
+    <div class="container_page">
+        <div class="container">
+            <div class="corps">
+                <div Style="border-bottom:solid 1px;" class="msg_recu">
 
-                    <tr>
-                        <td colspan='4' height="50"></td>
-                        <td align='centre'><input Style='background:#d9e021 ' type="submit" class="btn btn-default" value="Envoyez votre message"></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-        <div class="corps">
-            <h3>MESSAGES RECUS</h3>
-            <?php
-                $j=1;
-                for ($i = 0 ; $i<$nbEntite;$i=$i+3){
-                    $dest = "dest".$j;
-                    $suj = "suj".$j;
-                    $messages = "messages".$j;
-                    echo "Destinataire : ".eval('return $'. $dest . ';')." ";
-                    echo "Sujet : ".eval('return $'. $suj . ';')." ";
-                    echo eval('return $'. $messages . ';')." ";
-                    echo "</br>";
-                    $j=$j+1;
-                }
-            ?>
+                    <h3>MESSAGES RECUS</h3>
+                    <?php
+                    $j=1;
+                    echo '<table class="table table-hover">';
+                    echo '<tr>';
+                    echo '<th>Destinataire</th>';
+                    echo '<th>Sujet</th>';
+                    echo '<th> Message</th>';
+                    echo '</tr>';
+
+                    for ($i = 0 ; $i<$nbEntite;$i=$i+3){
+                        $dest = "dest".$j;
+                        $suj = "suj".$j;
+                        $messages = "messages".$j;
+
+                        echo "<tr>";
+                        echo "<td>".eval('return $'. $dest . ';')."</td>";
+                        echo "<td>".eval('return $'. $suj . ';')."</td>";
+                        echo "<td>".eval('return $'. $messages . ';')."</td>";
+                        echo "</tr>";
+
+
+
+                        // echo "Destinataire : ".eval('return $'. $dest . ';')." ";
+                        // echo "Sujet : ".eval('return $'. $suj . ';')." ";
+                        // echo eval('return $'. $messages . ';')." ";
+                        // echo "</br>";
+                        $j=$j+1;
+                    }
+                    echo '</table>';
+                    ?>
+                </div>
+                <div class="envoi-msg">
+                    <h3>ENVOYER UN MESSAGE</h3>
+                    <hr>
+                    <form id = "" action="<?php echo site_url('messages');?>" method="post">
+                        <table Style="width:100%">
+                            <tr>
+                                <td ><label for='destinataire'>Destinataire</label></td>
+                                <td> <input class="form-control" type='text' id='destinataire' name='destinataire'> </td>
+                            </tr>
+                            <tr>
+                                <td height="50"><label for='sujet'>Sujet</label></td>
+                                <td > <input class="form-control" id="sujet" name="sujet" type='text'> </td>
+                            </tr>
+                            <tr>
+                                <td ><label for='message'>Message</label></td>
+                                <td > <textarea class="form-control" id="message" name="message" rows='7' ></textarea></td>
+                            </tr>
+
+                            <tr>
+                                <td  height="50"></td>
+                                <td align='centre'><input Style='background:#d9e021 ' type="submit" class="btn btn-default" value="Envoyez votre message"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
 
 <?php
 }
 else{
-?>
+    ?>
     <div class="container_page">
         <div class="container">
             <div class="corps">

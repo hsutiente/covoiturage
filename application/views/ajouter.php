@@ -11,11 +11,11 @@
                             <td id="ds_calclass"></td>
                         </tr>
                     </table>
-                    <input id='date'  type='text' name="date" onclick="ds_sh(this);">
-                    <br/>
+                    <input id='date' type='text' name="date" onclick="ds_sh(this);">
+                    <br/><br>
                     <label for='heure'>Heure </label>
 
-                    <select name="heure"  id="heure">
+                    <select name="heure" id="heure">
                         <option value=""></option>
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -50,10 +50,12 @@
                         <option value="45">45</option>
                     </select>
                 </fieldset>
-                    <br>
+                <br>
                 <fieldset>
                     <legend >Trajet <abbr title="Obligatoire">*</abbr></legend> <br>
-                    <img src="<?php echo img_url('marker.png')?>"> <label>De</label> <input id='villeDepart' name='villeDepart'> <br>
+                    <img src="<?php echo img_url('marker.png')?>">
+                    <label>De</label>
+                    <input id='villeDepart' name='villeDepart'> <br> <br>
                     <span id="par_1">
                     <img src="<?php echo img_url('marker_2.png')?>">
 
@@ -67,9 +69,10 @@
                     <br>
 
                 </fieldset>
+
                 <fieldset>
                     <label>Place <abbr title="Obligatoire">*</abbr>
-                    <a rel="tooltip" title="Correspond au nombre de personnes que vous pouvez transporter avec vous dans votre voiture."><img src="<?php echo img_url('icon_tooltip.gif')?>"></a>
+                        <a rel="tooltip" title="Correspond au nombre de personnes que vous pouvez transporter avec vous dans votre voiture."><img src="<?php echo img_url('icon_tooltip.gif')?>"></a>
                     </label>
                     <select  name="nbPlaces" required>
                         <option value='1'>1</option>
@@ -90,7 +93,7 @@
                     <input type='checkbox' name="fumeur"> Fumeurs <br>
                     <input type='checkbox' name="musique"> Musiques <br>
                     <input type='checkbox' name="discussion"> Discussion <br> <br>
-                  
+
 
                     <label>Commentaire</label>
                     <textarea  class='form-control' rows='7' cols='85' placeholder='Complétez votre annonce par un message détaillant au mieux votre trajet (lieu de RDV, arrêt, détour, style de conduite, conversation...). Conformément aux règles du site, merci de ne saisir ici aucun n° de téléphone, mais de compléter les informations de votre profil.'>

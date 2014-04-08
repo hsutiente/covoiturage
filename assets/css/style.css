@@ -140,7 +140,7 @@ footer{
 
 }
 
-.form_ajoutTrajet input, textarea, select {
+input, textarea , select {
    padding:3px;
    border:1px solid #483d37;
    border-radius:5px; 
@@ -152,6 +152,7 @@ footer{
    border:none;
    width:10px;
 }
+
 .form_ajoutTrajet label{
     display:block;
     width:200px;
@@ -161,6 +162,14 @@ footer{
 .form_ajoutTrajet fieldset {
    padding:0 20px 20px 20px;
    margin-bottom:10px;
+}
+
+/*PUBLIER*/
+
+.formPublier label{
+    display:block;
+    width:200px;
+    float:left;
 }
 
 
@@ -191,6 +200,5 @@ footer{
     height:8px;
     background:url(img/tipFooter.gif) no-repeat;
 }
-
 
 

@@ -6,23 +6,24 @@ $verifSession = $this->session->userdata('pseudoConnecte');
     <div class="container">
         <div class="corps">
             <h3>AFFICHAGE DU TRAJET SELECTIONNE</h3>
-            <h4><?php echo $villeDepart." -> Iut de Lens";?></h4>
-            <h4><?php echo "Trajet proposé par ".$nomconducteur;?></h4>
+            <hr>
+            <h4><?php echo $villeDepart. " <img src=".img_url('fleche-droite.png').">"  . " Iut de Lens";?></h4>
+            <h4><?php echo "Trajet proposé par " ."<b>".$nomconducteur . "</b>" ;?></h4>
             <?php
             if($verifSession){
-            ?>
-            <form>
-                </br>
-                <h5><a href="<?php echo site_url('affichertrajet/sinscrire/'.$id);?>">S'inscrire à ce trajet ?</a></h5>
-                </br>
-            </form>
+                ?>
+                <form>
+                    </br>
+                    <h5><a href="<?php echo site_url('affichertrajet/sinscrire/'.$id);?>">S'inscrire à ce trajet ?</a></h5>
+                    </br>
+                </form>
             <?php
             }
             ?>
             <div id="directionsDiv"></div>
             <div id="map_canvas"></div>
             <?php echo $map['js']; ?>
-                <?php echo $map['html'];?>
+            <?php echo $map['html'];?>
         </div>
         <div class="info">
             <h4>Ce trajet vous intéresse ?</h4>
@@ -31,7 +32,7 @@ $verifSession = $this->session->userdata('pseudoConnecte');
                 Vous pouvez vous y inscrire en cliquant sur "S'inscrire a ce trajet"
             </p>
         </div>
-        <div class="info">
+        <div Style='margin-top:20px;' class="info">
             <h4>Qui participe à ce trajet ?</h4>
             <hr>
             <p Style='text-align:justify;'>
@@ -47,7 +48,7 @@ $verifSession = $this->session->userdata('pseudoConnecte');
                 ?>
             </p>
         </div>
-        <div class="info">
+        <div Style='margin-top:20px;' class="info">
             <h4>Préférences de ce trajet</h4>
             <hr>
             <p Style='text-align:justify;'>
@@ -61,4 +62,5 @@ $verifSession = $this->session->userdata('pseudoConnecte');
             </p>
         </div>
     </div>
+</div>
 </div>
