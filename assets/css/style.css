@@ -87,7 +87,8 @@ body{
 
 
 .corps{float: left; border: solid 1px #483d37; width: 65%;padding: 15px;box-shadow: 1px 1px 12px #555;}
-.info{float: right; border: solid 1px #483d37; width: 30%;padding: 20px;box-shadow: 1px 1px 12px #555;margin-right: 3%;}
+.info{float: right; border: solid 1px #483d37; width: 30%;padding: 20px;box-shadow: 1px 1px 12px #555;margin-right: 3%;word-wrap: break-word;
+}
 
 
 
